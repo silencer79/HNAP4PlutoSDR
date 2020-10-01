@@ -11,7 +11,7 @@ CALLSIGN=$(fw_printenv -n hnap_callsign)
 PLATFORM_STRING=$(grep plutosdr-fw /root/VERSION)
 DESC_STRING="$(grep hnap /root/VERSION) $PLATFORM_STRING"
 
-lldpcli configure lldp tx-interval 60
+lldpcli configure lldp tx-interval 300
 lldpcli configure system hostname "$CALLSIGN"
 lldpcli configure system platform "$DESC_STRING"
 lldpcli resume
